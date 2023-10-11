@@ -94,7 +94,7 @@ read_data("data.csv")
 total_double_sum = 0
 for elem in [10, 5, 2]:
     double = elem * 2
-    total_double_sum += elem
+    total_double_sum += elem#error
 
 ### (b)
 strings = ''
