@@ -59,9 +59,49 @@ print(testStr, " - ", b, " = ", "None" if result == None else result )
 # {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}
 # create two functions that returns the age of the person
 # that handles both examples.
-# Name the first function "retrieve_age_eafp" and follow EAFP
-# Name the second function "retrieve_age_lbyl" and follow lby
 
+# Name the first function "retrieve_age_eafp" and follow EAFP
+def retrieve_age_eafp(person):
+    try:
+        current_year = 2023  
+        birth_year = person['birth']
+        age = current_year - birth_year
+        return age
+    except KeyError:
+        return None  
+    except Exception as e:
+        return None  
+
+person1 = {'name': 'John', 'last_name': 'Doe', 'birth': 1987}
+person2 = {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}
+
+age1 = retrieve_age_eafp(person1)
+age2 = retrieve_age_eafp(person2)
+
+print("Age of person 1:", age1)  
+print("Age of person 2:", age2)  
+
+# Name the second function "retrieve_age_lbyl" and follow lbyl
+def retrieve_age_lbyl(person):
+    if 'birth' in person:
+        try:
+            current_year = 2023  
+            birth_year = person['birth']
+            age = current_year - birth_year
+            return age
+        except Exception as e:
+            return None  
+    else:
+        return None  
+
+person1 = {'name': 'John', 'last_name': 'Doe', 'birth': 1987}
+person2 = {'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}
+
+age1 = retrieve_age_lbyl(person1)
+age2 = retrieve_age_lbyl(person2)
+
+print("Age of person 1:", age1)  
+print("Age of person 2:", age2)  
 
 # 4)
 # Imagine you have a file named data.csv. 
