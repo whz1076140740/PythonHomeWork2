@@ -134,21 +134,37 @@ read_data("data.csv")
 total_double_sum = 0
 for elem in [10, 5, 2]:
     double = elem * 2
-    total_double_sum += elem#error
+    #total_double_sum += elem
+    #we want to sum the double of input of each elem, but after double we just sum original elem
+    #solution
+    total_double_sum += double
+
 
 ### (b)
 strings = ''
 for string in ['I', 'am', 'Groot']:
-    strings = string+"_"+string
+    #strings = string+"_"+string
+    #we want to cantecate string and a space string " " in the order of input, 
+    #but we cantecate twice of each string
+    #solution
+    strings = string+"_"
 
 ### (c) Careful!
 j=10
 while j > 0:
-   j += 1
+   #j += 1
+   #while loop will not stop before reach the false condition, j is a positive number, 
+   #we should let j decrease each time
+   #solution
+    j -= 1
 
 ### (d)
-productory = 0
+#productory = 0
+#we want to multiply productory by input list, 
+#but our intantiate value of productory is 0, 
+#so each time do multiplication the result is just 0.
+#solution
+productory = 1
 for elem in [1, 5, 25]:
     productory *= elem
-
 
